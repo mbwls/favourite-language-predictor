@@ -3,7 +3,7 @@ import _ from 'lodash';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
-const NameInput = props => {
+const NameInput = () => {
     // BEGIN HOOKS
     const [username, setUsername] = useState('');
     const [searchKey, setSearchKey] = useState(username);
@@ -19,7 +19,6 @@ const NameInput = props => {
                     };
 
                     resp.json().then((data) => {
-                        console.log('errrr', data.message)
                         setFavLang(_.head(_(_.map(data, 'language'))
                             .countBy()
                             .entries()
@@ -46,7 +45,7 @@ const NameInput = props => {
         <React.Fragment>
             <TextField
                 id='username'
-                label='Github Username'
+                label='GitHub Username'
                 margin='normal'
                 variant='outlined'
                 value={username}
