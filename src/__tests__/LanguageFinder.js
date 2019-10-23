@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import NameInput from '../components/LanguageFinder';
+import LanguageFinder from '../components/LanguageFinder';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
