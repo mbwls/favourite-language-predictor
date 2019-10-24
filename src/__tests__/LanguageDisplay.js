@@ -1,9 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { shallow } from 'enzyme';
 import LanguageDisplay from '../components/LanguageDisplay';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<LanguageDisplay />, div);
-  ReactDOM.unmountComponentAtNode(div);
-});
+
+describe('LanguageDisplay Component', () => {
+    it('should render without errors', () => {
+        const component = shallow(<LanguageDisplay />);
+    });
+})
