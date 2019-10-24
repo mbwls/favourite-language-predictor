@@ -1,7 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import LanguageDisplay from '../components/LanguageDisplay';
-import { italic } from 'ansi-colors';
 
 const setUp = (props = {}) => {
     const component = shallow(<LanguageDisplay {...props} />);

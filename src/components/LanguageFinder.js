@@ -75,19 +75,22 @@ const LanguageFinder = () => {
                     value={username}
                     onChange={handleChange}
                     onKeyPress={handleKeyPress}
+                    data-test='username-input'
                 />
             </div>
 
             <div>
                 <Button
                     className='search-button'
-                    onClick={handleClick}>
+                    onClick={handleClick}
+                    data-test='search-button'>
                     SEARCH
                 </Button>
 
                 <LanguageDisplay
                     language={favLang}
                     valid={valid}
+                    data-test='language-display'
                 />
             </div>
         </div>

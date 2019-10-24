@@ -19,7 +19,7 @@ describe('Header Component', () => {
         const detective = findByTestAttr(component, 'detective');
         expect(detective.length).toBe(1);
     });
-
+    
     it('Should render a title', () => {
         const title = findByTestAttr(component, 'title');
         expect(title.length).toBe(1);
