@@ -21,6 +21,7 @@ const LanguageFinder = () => {
                     switch (resp.status) {
                         case 200:
                             resp.json().then((data) => {
+                                // filter out repos with no valid language and determine most frequent language
                                 let fv = _.head(_(_.map(_.filter(data, (o) => o.language !== null), 'language'))
                                     .countBy()
                                     .entries()
@@ -44,6 +45,15 @@ const LanguageFinder = () => {
     // END HOOKS
 
     // BEGIN EVENT HANDLERS
+    const handleChange = (event) => {
+        setUsername(event.target.value);
+        // 'clear' output when search field is empty
+        if (event.target.value === '') {
+            setFavLang('');
+            setValid(true);
+        }
+    }
+
     const handleKeyPress = (event) => {
         if (event.key === 'Enter') setSearchKey(event.target.value);
     }
@@ -54,7 +64,7 @@ const LanguageFinder = () => {
     // END EVENT HANDLERS
 
     return (
-        <React.Fragment>
+        <div>
             <div>
                 <TextField
                     error={!valid}
@@ -63,7 +73,7 @@ const LanguageFinder = () => {
                     margin='normal'
                     variant='outlined'
                     value={username}
-                    onChange={e => setUsername(e.target.value)}
+                    onChange={handleChange}
                     onKeyPress={handleKeyPress}
                 />
             </div>
@@ -80,7 +90,7 @@ const LanguageFinder = () => {
                     valid={valid}
                 />
             </div>
-        </React.Fragment>
+        </div>
     )
 }
 
