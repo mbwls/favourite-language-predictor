@@ -4,7 +4,7 @@ const LanguageDisplay = (props) => {
     return (
         props.language === 'NO REPOS' ? <h3>User has no valid respositories!</h3> :
             (!props.valid ? <h3>Invalid username!</h3> :
-                (props.language !== '' ? <h3>{`Favourite language: ${props.language}`}</h3> : null)
+                (props.language && props.language !== '' ? <h3>{`Favourite language: ${props.language}`}</h3> : null)
             )
     )
 }
