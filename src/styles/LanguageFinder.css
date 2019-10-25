@@ -1,8 +1,17 @@
 .username-input {
     width: 100%;
+    max-width: 500px;
 }
 
 .wrapper .search-button {
     width: 100%;
+    max-width: 150px;
     background-color: #e0e0e0;
+}
+
+@media (max-width: 480px) {
+    .wrapper .search-button {
+        width: 100%;
+        max-width: 100%;
+    }
 }
